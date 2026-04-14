@@ -1,243 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТелекомМастер</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТелекомМастер</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0f172a, #020617);
-            color: white;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#020617;color:#fff}
 
-        header {
-            padding: 40px 20px;
-            text-align: center;
-        }
+header{text-align:center;padding:40px}
+header h1{font-size:42px;background:linear-gradient(90deg,#38bdf8,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav a{margin:0 10px;color:#cbd5f5;text-decoration:none}
 
-        header h1 {
-            font-size: 42px;
-            background: linear-gradient(90deg, #38bdf8, #22c55e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.hero{height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31') center/cover no-repeat}
+.hero h2{font-size:36px;background:rgba(0,0,0,0.6);padding:10px 20px;border-radius:10px}
 
-        header p {
-            margin-top: 10px;
-            color: #94a3b8;
-        }
+.btn{margin-top:20px;padding:12px 25px;border-radius:30px;background:linear-gradient(90deg,#38bdf8,#22c55e);color:#000;text-decoration:none}
 
-        nav {
-            margin-top: 20px;
-        }
+section{padding:60px 20px;max-width:1000px;margin:auto}
+h2{text-align:center;margin-bottom:30px;color:#38bdf8}
 
-        nav a {
-            color: #cbd5f5;
-            margin: 0 15px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+.card{background:#0f172a;padding:20px;border-radius:20px;transition:.3s}
+.card:hover{transform:translateY(-8px)}
 
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.fade{opacity:0;transform:translateY(30px);transition:1s}
+.show{opacity:1;transform:translateY(0)}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-            color: #38bdf8;
-        }
+img.block{width:100%;max-width:700px;border-radius:15px;margin:0 auto 30px;display:block}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 20px;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .card b {
-            color: #22c55e;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .price {
-            color: #22c55e;
-            font-weight: bold;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .hero h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #38bdf8, #22c55e);
-            color: black;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #64748b;
-        }
-
-    
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    </style>
+footer{text-align:center;padding:30px;color:#64748b}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>ТелекомМастер</h1>
-    <p>Современный сервис ремонта оборудования связи</p>
-    <nav>
-        <a href="#services">Услуги</a>
-        <a href="#prices">Цены</a>
-        <a href="#contacts">Контакты</a>
-    </nav>
+<h1>ТелекомМастер</h1>
+<nav>
+<a href="#services">Услуги</a>
+<a href="#equipment">Оборудование</a>
+<a href="#prices">Цены</a>
+<a href="#advantages">Преимущества</a>
+<a href="#contacts">Контакты</a>
+</nav>
 </header>
 
 <div class="hero">
-    <h2>Быстро. Точно. Надежно.</h2>
-    <p>Ремонт и диагностика телекоммуникационного оборудования любой сложности</p>
-    <a class="btn" href="#contacts">Связаться</a>
+<h2>Ремонт и диагностика оборудования связи</h2>
+<a class="btn" href="#contacts">Связаться</a>
 </div>
 
-<section id="services" class="fade-in">
-    <h2>Услуги</h2>
-    <div class="grid">
-        <div class="card">
-            <b>Диагностика</b>
-            Анализ сигналов и поиск неисправностей
-        </div>
-        <div class="card">
-            <b>Ремонт</b>
-            Пайка, замена компонентов и прошивка
+<section class="fade" id="services">
+<h2>Услуги</h2>
+<img class="block" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<div class="grid">
+<div class="card"><b>Диагностика</b><br>Анализ сигналов и поиск неисправностей</div>
+<div class="card"><b>Ремонт</b><br>Пайка, замена компонентов</div>
+<div class="card"><b>Калибровка</b><br>Точная настройка приборов</div>
+<div class="card"><b>Поверка</b><br>Официальные измерения</div>
 </div>
-        <div class="card">
-            <b>Калибровка</b>
-            Точная настройка приборов
-        </div>
-        <div class="card">
-            <b>Поверка</b>
-            Официальные измерения и протоколы
-        </div>
-    </div>
 </section>
 
-<section id="prices" class="fade-in">
-    <h2>Цены</h2>
-    <div class="grid">
-        <div class="card">Тестирование <br><span class="price">от 8.50 BYN</span></div>
-        <div class="card">Ремонт коммутатора <br><span class="price">от 15.50 BYN</span></div>
-        <div class="card">Ремонт модема <br><span class="price">от 22.60 BYN</span></div>
-        <div class="card">Монтаж розетки <br><span class="price">от 9.65 BYN</span></div>
-    </div>
+<section class="fade" id="equipment">
+<h2>Оборудование</h2>
+<img class="block" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<div class="card">
+Маршрутизаторы, коммутаторы, модемы, Wi-Fi оборудование, оптоволокно, измерительные приборы
+</div>
 </section>
 
-<section id="advantages" class="fade-in">
-    <h2>Почему мы лучше конкурентов</h2>
-    <div class="grid">
-        <div class="card">
-            <b>Быстрый ремонт</b>
-            Выполняем большинство работ в день обращения
-        </div>
-        <div class="card">
-            <b>Гарантия 1 год</b>
-            Даём официальную гарантию на все виды работ
-        </div>
-        <div class="card">
-            <b>Бесплатная диагностика</b>
-            При последующем ремонте вы ничего не платите
-        </div>
-        <div class="card">
-            <b>Современное оборудование</b>
-            Используем профессиональные измерительные приборы
-        </div>
-        <div class="card">
-            <b>Выездной инженер</b>
-            Можем приехать к вам с оборудованием
-        </div>
-        <div class="card">
-            <b>Прозрачность</b>
-            Показываем неисправности и объясняем ремонт
-        </div>
-    </div>
+<section class="fade" id="prices">
+<h2>Цены</h2>
+<div class="grid">
+<div class="card">Тестирование<br><b>от 8.50 BYN</b></div>
+<div class="card">Ремонт коммутатора<br><b>от 15.50 BYN</b></div>
+<div class="card">Ремонт модема<br><b>от 22.60 BYN</b></div>
+<div class="card">Монтаж розетки<br><b>от 9.65 BYN</b></div>
+</div>
 </section>
 
-<section id="contacts" class="fade-in">
-    <h2>Контакты</h2>
-    <div class="card">
-        📍 Минск, ул. Казинца, 32/1<br><br>
-        📞 +375298674545<br>
-        📞 +375446875564<br><br>
-        Telegram: @telecommaster
-    </div>
+<section class="fade" id="advantages">
+<h2>Почему мы лучше</h2>
+<img class="block" src="https://images.unsplash.com/photo-1526378722484-cc5c510f8e5b">
+<div class="grid">
+<div class="card">Быстрый ремонт</div>
+<div class="card">Гарантия 1 год</div>
+<div class="card">Бесплатная диагностика</div>
+<div class="card">Современное оборудование</div>
+<div class="card">Выездной инженер</div>
+<div class="card">Прозрачность</div>
+</div>
+</section>
+
+<section class="fade" id="contacts">
+<h2>Контакты</h2>
+<img class="block" src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<div class="card">
+📍 Минск<br>
+📞 +375298674545<br>
+📞 +375446875564<br>
+Telegram: @telecommaster
+</div>
 </section>
 
 <footer>
-    © 2026 ТелекомМастер
+© 2026 ТелекомМастер
 </footer>
 
 <script>
-const elements = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-elements.forEach(el => observer.observe(el));
+const f=document.querySelectorAll('.fade');
+const o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})});
+f.forEach(el=>o.observe(el));
 </script>
 
 </body>
